@@ -78,7 +78,7 @@ def get_npcp_data(
     
     file_starts = {'raw': variable, 'ecdfm': f'{variable}_NPCP', 'qme': variable, 'qdm': f'{variable}_NPCP'}
     file_start = file_starts[bias_correction_method]
-    file_end = '1231.nc' if bias_correction_method == 'ecdfm' else '.nc'
+    file_end = '1231_maxaf50pct.nc' if bias_correction_method == 'ecdfm' else '.nc'
     search_dir = f'/g/data/ia39/npcp/data/{variable}/{driving_model}/{downscaling_model}/{bias_correction_method}/{task}'
     files = sorted(glob.glob(f'{search_dir}/{file_start}*{file_end}'))
     if not files:
